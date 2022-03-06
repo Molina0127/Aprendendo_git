@@ -1,0 +1,23 @@
+Primeiramente é interessante saber o que é o GIT.
+
+E vamos lá o que é o GIT? O GIT como um versionador de códigos. 
+
+Isso porque quando estamos desenvolvendo código, em certos momentos queremos voltar a uma versão anterior do nosso projeto, seja porque o nosso programa está com algum problema, ou porque alguma feature que funciona melhor no código de 2 dias atrás.
+
+
+Independente da situação isso acontece muitas vezes, e graças ao GIT isso é possível, voltar em versões anteriores do nosso código.
+
+Além disso também é possível utilizar o GIT para o desenvolvimento de projetos em equipe, em certos momentos enquanto nós desenvolvemos um código 
+
+console.log("Hello World")
+
+O nosso colega desenvolvedor está desenvolvendo um código 
+
+console.log("Hello Earth")
+
+Esses códigos são diferentes, mas graças ao GIT podemos uní-lo em um só projeto e escolher qual código devemos manter e qual código não precisamos aproveitar.
+
+Github
+
+O Github é uma plataforma que hospeda códigos que utilizam o GIT, é a forma de utilizar o GIT de maneira remota.
+

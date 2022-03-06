@@ -1,0 +1,27 @@
+Para iniciar com o git em uma pasta devemos seguir esse processo:
+
+-> Clicar com o botão direito
+
+-> Clicar em Git Bash Here
+
+-> Entrar no terminal do Git
+
+-> Digitar o seguinte comando:
+
+git init
+
+E pronto o git foi iniciado na pasta, então será criada uma pasta chamada .git, essa é uma pasta oculta que para ser visualizada necessita que nós habilitemos uma configuração.
+
+No caso do meu computador é clicar em:
+ 
+Exibir -> 
+Itens Ocultos e habilitar essa opção.
+
+Com o comando "git status"
+
+Nós vemos se o local onde estamos guardando os nossos códigos está ou não atualizado.
+
+Após rodarmos esse comando, é retornado uma mensagem com os arquivos que foram adicionados e os arquivos que não foram adicionados no versionador de código.
+
+
+ 
