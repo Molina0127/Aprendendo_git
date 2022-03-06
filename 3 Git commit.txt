@@ -1,0 +1,77 @@
+Depois dos arquivos estarem prontos para serem enviados ao versionador de código, nós devemos criar a nossa primeira versão no git e para isso iremos usar o git commit.
+
+Sempre que criarmos um commit em algum projeto, devemos colocar algum nome de mensagem para descrevê-lo. Essa é uma boa prática do uso de Git.
+
+Rodamos o seguinte código:
+
+git commit -m "descrição_do_commit"
+
+No caso de ser a primeira vez que você está rodando esse programa, você terá que configurar o seu email e o seu nome de usuário, com os seguintes comandos:
+
+git config --globar user.email "your@example.com"
+git config --globar user.name "Your Name"
+
+Normalmente se usa o mesmo email em que está criada a sua conta no Github.
+
+É importante colocar o nome, porque quando criamos as nossas commits o nosso nome estará associado a elas.
+
+Para colocar esses arquivos na nuvem nós utilizamos o comando "git push"
+
+Não podemos apenas digitar git push, porque é necessário especificar para onde iremos enviar os nossos arquivos. Então primeiramente devemos criar um repositório no Github.
+
+Esse processo é bem intuitivo:
+
+Vamos ao nosso perfil no Github ->
+
+Clicamos em um botão de "+" ->
+
+Depois clicamos na opção New Repository ->
+
+E colocamos o nome do repositório e opcionalmente uma descrição, escolhemos como público ou privado.
+
+E podemos escolher para colocar um arquivo README, uma Licença e um arquivo .gitignore.
+
+O arquivo Readme.md é importante porque nele é colocado as instruções de como as pessoas devem usar os arquivos nesse repositório.
+
+E clicamos em "Create repository"
+
+Quando criamos esse repositório, podemos colocar os arquivos que estão disponíveis localmente para usarmos na nuvem. 
+
+Devemos primeiramente copiar o endereço do repositório, podemos fazer isso de duas maneiras.
+
+Clicando em Code e
+
+Copiando o HTTPS ou
+
+Copiando a URL
+
+Após isso voltamos ao terminal e digitamos:
+
+git remote add origin "URL do nosso repositório"
+
+Exemplo:
+
+git remote add origin https://github.com/Molina0127/Aprendendo_git.git
+
+Acabamos de definir para onde o nosso código será enviado.
+
+Depois disso, devemos rodar o "git push" especificando para qual branch do nosso repositório os arquivos serão enviados ...
+
+(As Branchs a princípio podem ser tratadas como versões ou divisões diferente do nosso código que estão sendo versionadas de forma separada.)
+
+... por padrão, a branch que utilizamos é a master
+
+Para setar a branch master como a padrão, rodamos o seguinte comando:
+
+git push --set-upstream origin master
+
+
+
+
+ 
+
+
+
+
+
+

@@ -23,5 +23,14 @@ Nós vemos se o local onde estamos guardando os nossos códigos está ou não at
 
 Após rodarmos esse comando, é retornado uma mensagem com os arquivos que foram adicionados e os arquivos que não foram adicionados no versionador de código.
 
+Normalmente o nome desse arquivo está em vermelho.
+
+Para adicionarmos esse arquivo ao nosso versionador, rodamos a seguinte linha de código:
+
+git add "nome_do_arquivo" ou git add .
+
+Após digitar esse comando, os nossos arquivos foram preparados para serem adicionados ao nosso versionador.
+
+
 
  
