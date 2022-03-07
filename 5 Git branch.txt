@@ -74,4 +74,53 @@ $ git branch
 
 Fizemos uma alteração no projeto, e isso pode ser qualquer alteração apenas para teste.
 
+Bem modificamos o projeto nessa nova branch e agora devemos fazer um commit 
 
+Primeiramente rodamos o comando git status
+
+Verificamos que houve modificações no nosso arquivo:
+
+$ git status
+On branch staging
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   5 Git branch.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Rodamos o comando:
+
+git add . ->
+
+git status (E se aqui retornar que está tudo bem, podemos dar um commit) ->
+
+git commit -m "Descrição do commit"
+
+Agora devemos o push para subir a nossa nova branch para a nuvem, ao invés de rodarmos apenas "git push" Devemos lembrar que se trata de uma nova branch, então devemos setar novamente o nosso push como fizemos anteriormente com a branch master, para depois usarmos o git push normalmente.
+
+git push --set-upstream origin staging
+
+E provavelmente irá retornar essa mensagem:
+
+$ git push --set-upstream origin staging
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 822 bytes | 274.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'staging' on GitHub by visiting:
+remote:      https://github.com/Molina0127/Aprendendo_git/pull/new/staging
+remote:
+To https://github.com/Molina0127/Aprendendo_git.git
+ * [new branch]      staging -> staging
+branch 'staging' set up to track 'origin/staging'.
+
+Após isso quando nós vamos para o site do Github e acessamos o repositório, podemos notar que temos 2 branchs e além disso quando vemos o histórico de commits, um branch se diferencia do outro.
+
+O branch master tem 14 commits e o branch staging tem 15 commits
+
+A vantagem de trabalhar com branchs é que podemos separar o código que está estável do código que vai receber as atualizações.

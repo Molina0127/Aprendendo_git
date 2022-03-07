@@ -1,0 +1,27 @@
+Criamos uma nova branch que possui um código diferente da branch master, agora como trazer as atualizações da branch staging para a master?
+
+Para isso iremos utilizar o merge
+
+Primeiramente devemos estar na branch que irá receber os arquivos, então rodamos o comando:
+
+git checkout nome_da_branch
+
+Que no meu caso é
+
+git checkout master
+
+Depois rodamos o comando:
+
+git branch -> Para verificar se estamos no branch correto, caso estivermos, rodamos o comando git merge com o nome da branch da qual iremos puxar os arquivos.
+
+//Quando estamos trabalhando em equipe é recomendado fazermos um git pull na merge em que iremos adicionar o código, para não correr o risco de adicionarmos código a uma versão desatualizada da nossa branch principal.
+
+Então após o comando git branch, podemos seguir com git pull, que ira puxar os arquivos do servidor.
+
+Após o git pull, rodamos o comando:
+
+git merge staging
+
+E depois disso rodamos, git push para atualizar a branch master remotamente.
+
+Então checamos no Github se está funcionando normalmente.
