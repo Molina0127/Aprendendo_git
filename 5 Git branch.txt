@@ -1,0 +1,38 @@
+As branchs podem ser consideradas como galhos ou ramos
+
+Possíveis traduções:
+
+o ramo, a filial, a ramificação
+
+As branchs são caminhos diferentes que iremos seguir durante o caminho de desenvolvimento. Cada branch pode ser considerada como um local para armazenar o versionamento do seu código.
+
+No começo nós desenvolvemos tudo em uma Branch principal.
+
+Quando nós trabalhamos individualmente, o nosso código não vai ser exposto para um usuário, normalmente uma branch já é o suficiente. 
+
+Quanto tratamos de trabalhamos em equipe com um teor mais profissional, utilizamos mais de uma branch. 
+
+Vamos desenvolvendo por exemplo o css em uma branch, o javascript em outra, o back-end em outra, com o intuito de ir desenvolvendo as funcionalidades do código mas criamos uma branch principal, com apenas as coisas que realmente estão funcionando.
+
+Então para mandar as coisas de uma branch para outra, utilizamos o comando 'merge'
+
+Exemplo:
+
+branch A - repositório do Front-end
+branch B - repositório do Back-end
+branch Master - repositório do código que já está funcionando
+
+Para vermos quais são as branchs do nosso projeto, rodamos o comando:
+
+git branch
+
+Como não criamos nenhuma outra branch até o momento o que aparece é o seguinte:
+
+$ git branch
+* master
+
+Para criar uma nova branch nós rodamos o seguinte código:
+
+git branch nome_da_branch
+
+//Como há um padrão de nomear essa nova branch como staging, irei criar a branch staging, essa branch é normalmente responsável por armazenar código que ainda está em desenvolvimento 
