@@ -36,3 +36,42 @@ Para criar uma nova branch nós rodamos o seguinte código:
 git branch nome_da_branch
 
 //Como há um padrão de nomear essa nova branch como staging, irei criar a branch staging, essa branch é normalmente responsável por armazenar código que ainda está em desenvolvimento 
+
+
+Obs: Quando utilizamos o terminal do powershell tanto o comando clear quanto o comando cls funciona para limpar o terminal, no caso do terminal do git apenas o clear
+
+Seguindo com o nosso projeto, vamos criar a branch staging
+
+git branch staging
+
+Após rodar esse comando devemos rodar o comando git branch para ver se a branch foi criada com sucesso:
+
+
+$ git branch
+* master
+  staging
+
+E como podemos ver a branch foi criada perfeitamente, existe um fator interessante que não é possível notar no bloco de notas, que a branch master está em verde e com um * isso porque essa é a branch que nós estamos utilizando. Para trocar de branch utilizamos o seguinte código:
+
+git checkout nome_da_branch 
+
+Nom meu caso:
+
+git checkout staging
+
+Se funcionar normalmente vai retornar "Switched to branch ..."
+
+$ git checkout staging
+Switched to branch 'staging'
+
+Para vericarmos se funcionou rodamos o comando git branch
+
+E tcharam esse foi o resultado:
+
+$ git branch
+  master
+* staging
+
+Fizemos uma alteração no projeto, e isso pode ser qualquer alteração apenas para teste.
+
+
