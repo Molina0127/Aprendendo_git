@@ -151,4 +151,44 @@ Merge made by the 'ort' strategy.
 
 --------------------------------------------------
 
-Não apareceu nenhuma mensagem de erro, então eu vou tentar dar um git pull, apenas para conferir que nada vai dar errado. 
+Não apareceu nenhuma mensagem de erro. 
+Então eu vou tentar dar um git pull, apenas para conferir que nada vai dar errado.
+
+Eu dei um git pull, e apareceu a seguinte mensagem:
+
+From https://github.com/Molina0127/Aprendendo_git
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+--------------------------------------------------
+
+Depois eu pensei que poderia ter alterações que eu não deveria ter colocado no versionador de código:
+
+Então eu rodei o comando:
+
+git status ->
+
+git add . ->
+
+git status ->
+
+E nesse ponto não havia nenhum arquivo faltando, portanto eu rodei:
+
+git commit -m "Rename File 3 and Create file 3.5" ->
+
+E depois disso git push --set-upstream origin master 
+
+Que resultou em:
+
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (15/15), 6.69 KiB | 760.00 KiB/s, done.
+Total 15 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/Molina0127/Aprendendo_git.git
+   cb2e457..2093fef  master -> master
+branch 'master' set up to track 'origin/master'.
+
+ 
