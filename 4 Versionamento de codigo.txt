@@ -24,4 +24,46 @@ branch 'master' set up to track 'origin/master'.
 
 Note a última linha. Agora apenas o git push:
 
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 873 bytes | 291.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Molina0127/Aprendendo_git.git
+   b24bb16..ff4e161  master -> master
+
+A última linha deixou de aparecer.) 
+
+Apenas um grande () para tratar de uma dúvida minha
+
+-------------------------------------------------------
+
+É possível verificar o histórico de versões do seu código?
+
+Siiimm. Para isso utilizamos o comando:
+
+git reflog
+
+No meu caso como eu estou brincando bastante, o resultado ficou assim:
+
+$ git reflog
+ff4e161 (HEAD -> master, origin/master) HEAD@{0}: commit: Changes in File 4
+b24bb16 HEAD@{1}: commit: Rename file 1 and Create File 4
+a5fffd0 HEAD@{2}: commit: Changes in File 3
+c9733d8 HEAD@{3}: commit: Changes in file 3.5
+93cf930 HEAD@{4}: commit: Changes in file 3.5
+2093fef HEAD@{5}: commit: Rename file 3 and Create file 3.5
+b5ccefc HEAD@{6}: pull origin master --allow-unrelated-histories: Merge made by the 'ort' strategy.
+ab6889c HEAD@{7}: commit: Creating Instruction to me
+4ee2b85 HEAD@{8}: commit (initial): Initial Commit
+
+A versão mais atual sempre vai ser a versão do topo.
+
+
+ 
+
+
   
