@@ -11,7 +11,7 @@ No caso de ser a primeira vez que você está rodando esse programa, você terá
 git config --globar user.email "your@example.com"
 git config --globar user.name "Your Name"
 
-Normalmente se usa o mesmo email em que está criada a sua conta no Github.
+Normalmente se usa o mesmo email em que está cadastrado a sua conta no Github.
 
 É importante colocar o nome, porque quando criamos as nossas commits o nosso nome estará associado a elas.
 
