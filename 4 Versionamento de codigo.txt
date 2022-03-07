@@ -1,0 +1,4 @@
+Na sequência do curso, o professor fala sobre a criação do primeiro repositório, e sobre a criação de novas versões daquele projeto, isso é possível graças a qualquer tipo de alteração no código, e um novo commit.
+
+Apenas isso já é o bastante para gerar novas versões no projeto.
+
