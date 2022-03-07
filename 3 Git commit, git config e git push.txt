@@ -65,6 +65,10 @@ Para setar a branch master como a padrão, rodamos o seguinte comando:
 
 git push --set-upstream origin master
 
+-----Momento do Disclaimer-----
+
+Obs: Eu estava seguindo um tutorial e deu um erro no meu git que não deu no git do professor no tutorial, então vou criar um novo documento, registrando como eu resolvi o problema.
+
 
 
 

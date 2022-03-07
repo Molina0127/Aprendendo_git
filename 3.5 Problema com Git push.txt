@@ -1,0 +1,154 @@
+O erro que aparece é o seguinte:
+
+Guilherme@DESKTOP-NCJVV38 MINGW64 /d/Guilherme/Documents/Projects/Aprendendo_GIT (master)
+$ git push --set-upstream origin master
+To https://github.com/Molina0127/Aprendendo_git.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Molina0127/Aprendendo_git.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Talvez não tinha a necessidade de copiar tudo dessa maneira, mas é legal para ter um panorama legal do que aconteceu.
+
+A parte do erro, traduzindo com a minha própria noção de inglês: "Falha em empurrar algumas referências para 'https://github.com/Molina0127/Aprendendo_git.git' Atualizações foram rejeitadas porque o remoto contém trabalho que você fez e não tem localmente. Isso usualmente é causado porque outro repositório empurrando para a mesma referência. Você talvez quer fazer a primeira integração de mudanças remotas.
+
+Use git pull antes de fazer pushing novamente
+
+Ohe as Notas sobre avanço rápido em 'git push --hepl' para detalhes"
+
+Certo depois dessa pseudo tradução, podemos tentar:
+
+1° Fazer um git pull
+
+Usei o seguinte código:
+
+git pull origin master
+
+Deixou de retornar algum daqueles erros, entretanto apareceu isso:
+
+$ git pull origin master
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 724 bytes | 38.00 KiB/s, done.
+From https://github.com/Molina0127/Aprendendo_git
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+fatal: refusing to merge unrelated histories
+
+
+O que me preocupa é esse "fatal: refusing to merge unrelated histories"
+
+Que traduzindo: "Recusando-se a mesclar históricos não relacionados"
+
+Eu não tenho muita ideia do que fazer então vou pesquisar no stackoverflow
+
+Encontrei um "artigo" interessante sobre o tema, na verdade é um texto bem pequeno.
+
+
+---------Artigo---------
+
+Desde o Release 2.9.0 2, o Git parou de permitir o merge automático de projetos que possuem históricos Git diferentes.
+
+O erro fatal: refusing to merge unrelated histories geralmente acontece quando você tenta fazer o git pull de um repositório remoto, mas o seu repositório local possuí um histórico de commits, branches, etc, diferente do que está no repositório remoto.
+
+Para permitir que o Git faça o merge de dois projetos com históricos diferentes, é só passar o parâmetro --allow-unrelated-histories quando for fazer o pull, assim:
+
+git pull origin master --allow-unrelated-histories
+
+(lembre-se de trocar os nomes do remote e branch para os que você utiliza)
+
+---------Link do Artigo---------
+
+https://community.umbler.com/br/t/resolvendo-o-erro-fatal-refusing-to-merge-unrelated-histories-no-git/657?gclid=CjwKCAiA1JGRBhBSEiwAxXblwbFkz7j88YNwbL8LapyiCK7rpXDxrDuVhq0AdQIqXxiN3zu0tfF26xoCAwUQAvD_BwE
+
+---------Autor do Artigo---------
+daniel
+
+
+Vou usar o git pull origin master --allow-unrelated-histories
+
+Merge branch 'master' of https://github.com/Molina0127/Aprendendo_git
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+~
+~
+D:/Guilherme/Documents/Projects/Aprendendo_GIT/.git/MERGE_MSG [unix] (21:42 06/03/2022)                                                                              1,1 All
+
+
+Isso foi o que apareceu, sendo assim agora podemos fazer o merge, agora eu tenho que aprender como fazer o merge.
+
+Depois de ver alguns vídeos, mas na verdade eu só fui até o fim em um, que eu vou colocar o link:
+
+---------Link do Vídeo---------
+
+https://www.youtube.com/watch?v=iRs6sQOPcvg
+
+---------Canal no Youtube---------
+
+Professor José de Assis
+
+
+E eu vi uma solução no stackoverflow que eu também acredito que pode ser útil
+
+
+---------Link da Solução---------
+
+https://stackoverflow.com/questions/19085807/please-enter-a-commit-message-to-explain-why-this-merge-is-necessary-especially
+
+---------Solução---------
+
+It's not a Git error message, it's the editor as git uses your default editor.
+
+To solve this:
+
+1. press "i" (i for insert)
+2. write your merge message
+3. press "esc" (escape)
+4. write ":wq" (write & quit)
+5. then press enter
+
+Tentei apertar o "i" não funcionou 
+
+Vou tentar escrever um commit 
+
+Continuamos na luta para tetar arrumar esse merge.
+--------------------------------------------------
+
+E agora apareceu a seguinte mensagem:
+
+Type  :qa!  and press <Enter> to abandon all changes and exit Vim
+
+Então vamos tentar:
+
+Ufaaaa :) funcionou, conseguimos sair do Vim
+
+--------------------------------------------------
+
+Eu digitei (Ctrl + C) e (Ctrl + X) ->
+
+Eu digitei :qa! apertei <Enter> e consegui sair
+
+-------------------------------------------------- 
+
+Guilherme@DESKTOP-NCJVV38 MINGW64 /d/Guilherme/Documents/Projects/Aprendendo_GIT (master)
+$ git commit -m "Creating Instruction to me"
+[master ab6889c] Creating Instruction to me
+ 3 files changed, 86 insertions(+)
+ rename "O que \303\251 o Git e o Github.txt" => "1 O que \303\251 o Git e o Github.txt" (100%)
+ rename Iniciando com o Git em um repositorio.txt => 2 Git init, git status e git add.txt (72%)
+Merge made by the 'ort' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+
+--------------------------------------------------
+
+Não apareceu nenhuma mensagem de erro, então eu vou tentar dar um git pull, apenas para conferir que nada vai dar errado. 
