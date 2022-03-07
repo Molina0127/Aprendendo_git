@@ -191,4 +191,12 @@ To https://github.com/Molina0127/Aprendendo_git.git
    cb2e457..2093fef  master -> master
 branch 'master' set up to track 'origin/master'.
 
- 
+Problema resolvido, vamos continuar o curso.
+
+---------Link de um artigo no Medium---------
+
+https://javascript.plainenglish.io/problem-with-git-merge-please-enter-a-commit-message-to-explain-why-this-merge-is-necessary-854757988c17
+
+---------Autora---------
+
+Mariequittelier
