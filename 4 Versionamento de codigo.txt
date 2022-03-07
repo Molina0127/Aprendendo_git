@@ -62,6 +62,42 @@ ab6889c HEAD@{7}: commit: Creating Instruction to me
 
 A versão mais atual sempre vai ser a versão do topo.
 
+Para voltar para alguma versão, nós utilizamos o comando:
+
+git reset --hard "id da versão"
+
+No meu caso eu quero voltar da versão que eu tinha feito como teste
+
+$ git reflog
+d986418 (HEAD -> master, origin/master) HEAD@{0}: commit: Teste
+ab7b73e HEAD@{1}: commit: New notes in file 4
+ff4e161 HEAD@{2}: commit: Changes in File 4
+b24bb16 HEAD@{3}: commit: Rename file 1 and Create File 4
+a5fffd0 HEAD@{4}: commit: Changes in File 3
+c9733d8 HEAD@{5}: commit: Changes in file 3.5
+93cf930 HEAD@{6}: commit: Changes in file 3.5
+2093fef HEAD@{7}: commit: Rename file 3 and Create file 3.5
+b5ccefc HEAD@{8}: pull origin master --allow-unrelated-histories: Merge made by the 'ort' strategy.
+ab6889c HEAD@{9}: commit: Creating Instruction to me
+4ee2b85 HEAD@{10}: commit (initial): Initial Commit
+
+Nesse caso vai ser:
+
+git reset --hard ab7b73e
+
+Apareceu essa mensagem:
+
+$ git reset --hard ab7b73e
+HEAD is now at ab7b73e New notes in file 4
+
+E o comando funcionou perfeitamente, também é possível ir para a versão que nós acabamos de sair.
+
+Eu só teria de rodar o comando:
+
+git reset --hard d986418
+
+E funcionaria normalmente.
+
 
  
 
