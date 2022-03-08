@@ -1,0 +1,221 @@
+Bem eu tive um problema com o Git merge, que foi uma espécie de conflito, eu pensei ter conseguido resolver mas não deu certo.
+
+Basicamente na mesma linha tem um texto na branch master e outro texto na branch staging.
+
+$ git merge master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Traduzindo, fazer o merge não é possível porque você tem arquivos que não são mergiáveis. Conserte os na árvore de trabalho, e então use "git add/rm <file> como apropriado para marcar a resolução e fazer um commit"
+
+Fatal: Saindo por conta de um conflito não resolvido
+
+Por conta que eu já tinha mexido no Vs Code e pensava ter resolvido o problema, eu rodei o seguinte comando:
+
+$ git add/rm 6 git merge e git checkout
+git: 'add/rm' is not a git command. See 'git --help'.
+
+E não funcionou, como eu estava sem ideia do que fazer, eu rodei o seguinte comando:
+
+git status, e me foi retornado:
+
+$ git status
+On branch staging
+Your branch is up to date with 'origin/staging'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   6 Git merge e git checktout.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Eu tentei novamente mudar para a outra branch, no caso a master para ver se eu conseguia resolver o problema de lá. Mas essa nem é uma ideia tão boa.
+
+$ git checkout master
+error: you need to resolve your current index first
+6 Git merge e git checktout.txt: needs merge
+
+E me foi retornado isso, eu realmente tenho que fazer o merge, se não eu não posso trocar de branch. Acredito que há uma possibilidade de resolver isso abortando o merge essa é a minha ideia atual, abortar o branch, depois acessar o editor do VS Code, aceitar ambas as mudanças e depois arrumar manualmente.
+
+Para isso eu vou ver o vídeo que eu deixei no arquivo 3.5
+
+Foi o que eu pensei, eu rodei o comando git merge --abort e esse foi o resultado
+
+$ git merge --abort
+
+Depois eu verifiquei a situação do repositório e tcharam, tudo ok :)
+
+$ git status
+On branch staging
+Your branch is up to date with 'origin/staging'.
+
+nothing to commit, working tree clean
+
+Agora eu posso alterar manualmente e evitar o problema. Deve haver resoluções melhores? Com certeza, mas por enquanto isso é suficiente.
+
+Eu fui alterar manualmente e ainda assim deu problema, voltamos a tentar resolver :(
+
+Não sei qual foi o problema.
+
+$ git merge staging
+Auto-merging 6 Git merge e git checktout.txt
+CONFLICT (content): Merge conflict in 6 Git merge e git checktout.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+O que eu fiz foi:
+
+Abrir o arquivo que estava com problema no meu editor de código ->
+
+Escolher qual opção eu iria querer (Both Change, Current Change, Incoming Change e etc.) ->
+
+git add "Nome do arquivo.nome_da_extensão" ->
+
+git commit -m "descrição do commit" ->
+
+git status para verficar se estava tudo ok ->
+
+E vendo que estava tudo ok ->
+
+git push
+
+A sequência de comandos foi a seguinte:
+
+$ git add "6 Git merge e git checktout.txt"
+
+$ git commit -m "merged and resolved the conflict in file 6"
+[master 79d7a38] merged and resolved the conflict in file 6
+
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+$ git push
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 231 bytes | 115.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Molina0127/Aprendendo_git.git
+   f2144c0..79d7a38  master -> master
+
+
+Eu utilizei um pedaço desse artigo para resolver:
+
+---------Link do Artigo---------
+
+https://www.atlassian.com/br/git/tutorials/using-branches/merge-conflicts
+
+---------Nome do Site---------
+
+Atlassina Bitbucket
+
+Agora é só verificar no github, ou até mesmo localmente se funcionou.
+
+Bem, ao que tudo indica não estou mais com problema mas a configuração que eu escolhi no VS Code não era a adequada então vou refazer o processo.
+
+Eu não sei o que ocorreu, eu dei um merge, o comando rodou e ainda assim os arquivos estão difentes em cada uma das branchs.
+
+No final eu alterei manualmente e tudo ocorreu bem, eu estava tentando repetir o git merge no master, porém não estava funcionando, eu fiz algumas alterações pontuais na branch master, dei commit e dei push tudo ocorreu bem.
+
+Após fazer isso, eu tentei fazer o git merge na branch staging e funcionou.
+
+
+//Trocando de Branch
+$ git checkout staging
+Switched to branch 'staging'
+Your branch is up to date with 'origin/staging'.
+
+//Pegando os arquivos da Branch Master
+$ git merge master
+Updating 7d75186..fec6e5c
+Fast-forward
+ 6 Git merge e git checktout.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+//Verifiquei a situação do repositório
+$ git status
+On branch staging
+Your branch is ahead of 'origin/staging' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        6.5 Problema com o Git merge.txt
+
+//Adicionei o arquivo
+git add .
+
+//Verifiquei a situação novamente
+$ git status
+On branch staging
+Your branch is ahead of 'origin/staging' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   6.5 Problema com o Git merge.txt
+
+//Dei o commit 
+$ git commit -m "Create file 6.5"
+[staging 11673e7] Create file 6.5
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 6.5 Problema com o Git merge.txt
+
+//Dei o push
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 293 bytes | 97.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Molina0127/Aprendendo_git.git
+   7d75186..11673e7  staging -> staging
+
+E verifiquei se estava funcionando no Github
+
+Funcionou para a branch staging e agora eu devo atualizar na branch master, isso ocorreu porque eu troquei de branch e criei o arquivo somente na branch staging, foi um erro meu.
+
+Eu vou apenas fazer o merge para resolver isso facilmente.
+
+$ git merge staging
+Updating fec6e5c..11673e7
+Fast-forward
+ 6.5 Problema com o Git merge.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 6.5 Problema com o Git merge.txt
+
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Só resta fazer o commit e o push
+
+$ git commit -m "Merge with Staging Branch"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Molina0127/Aprendendo_git.git
+   fec6e5c..11673e7  master -> master
+
+Eu me equivoquei, não era necessário fazer um commit apenas o push, e com isso basta checar o Github e se estiver tudo igual as coisas funcionaram e podemos prosseguir com o curso.
+
+
+ 
