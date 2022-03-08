@@ -1,0 +1,13 @@
+Vamos supor que nós temos a tarefa de criar uma nova funcionalidade no projeto a partir daquilo já foi desenvolvido até aqui, sendo assim nós devemos criar uma nova branch, para não trazer instabilidade a um código que está estável. 
+
+Mas queremos que essa branch já traga consigo todos os arquivos da nossa branch principal. Para atender essa demanda seguimos os seguintes passos:
+
+//Certificamos que estamos na branch que desejamos copiar os aquivos
+$ git branch
+
+E rodamos o seguinte comando 
+
+$ git checkout -b nome_da_nova branch
+
+No meu caso ficou assim:
+
