@@ -1,0 +1,23 @@
+A maneira que fizemos o merge foi direta, e isso não ocorre quando estamos trabalhando em algum projeto com equipe.
+
+Isso porque as pessoas devem aprovar o seu commit para que seja possível colocá-lo na branch principal, isso evita de erros no seu código passarem para a versão estável do projeto.
+
+Para criar uma pull request é bem simples:
+
+Clicamos em um botão verde escrito "Compare & pull request"
+
+Colocamos qual branch ira receber os arquivos e qual será a branch que vai enviar
+
+Colocamos um nome na pull request e uma descrição
+
+Clicamos em "Create pull request"
+
+E no meu caso como só tem um contribuidor no projeto, é possível fazer o merge, porém em casos que tenham mais pessoas, eles precisam aprovar a pull request para que ela seja mergeada, no meu caso eu vou mergear porque eu sei que não há nenhum problema no código.
+
+Mas caso houvesse eu deveria fazer comentários e sugestões de mudanças para que o código pudesse ser alterado e então colocado na branch principal.
+
+Quando o merge estiver completo o ícone que é verde vai ficar roxo.
+
+Clicamos em "Merge pull request" e depois em "Confirm merge" 
+
+Pronto e assim finalizamos o tópico pull request.
