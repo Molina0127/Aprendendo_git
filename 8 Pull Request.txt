@@ -1,0 +1,6 @@
+A maneira que fizemos o merge foi direta, e isso não ocorre quando estamos trabalhando em algum projeto com equipe.
+
+Isso porque as pessoas devem aprovar o seu commit para que seja possível colocá-lo na branch principal, isso evita de erros no seu código passarem para a versão estável do projeto.
+
+Para criar uma pull request é bem simples:
+
