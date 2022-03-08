@@ -27,5 +27,3 @@ E depois disso rodamos, git push para atualizar a branch master remotamente.
 Então checamos no Github se está funcionando normalmente.
 
 No meu caso estava então vou prosseguir com o curso;
-
----------Exemplo de Caso Real---------
