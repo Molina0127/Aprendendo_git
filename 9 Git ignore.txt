@@ -6,7 +6,7 @@ Para criá-lo é simples, basta rodar o seguinte comando no terminal do git (pel
 
 touch .gitignore
 
-E digitar dentro dele os arquivos que nós não desejamos que o git veja, exemplo:
+Dentro do arquivo ".gitignore" que será criado, nós escrevemos o nome de arquivos e pastas que não queremos que sejam observados pelo Git, exemplo:
 
 Eu criei o arquivo teste, e vou rodar o comando git status:
 
