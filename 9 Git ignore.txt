@@ -2,7 +2,7 @@ O git ignore é simplesmente um arquivo que permite esconder arquivos e pastas d
 
 Ou seja, se temos senhas, fotos, vídeos, mensagens ou qualquer tipo de arquivo que nós desejamos não subir para o versionador de código, nós colocamos no .gitgnore.
 
-Para criá-lo é simples, basta rodar o seguinte comando:
+Para criá-lo é simples, basta rodar o seguinte comando no terminal do git (pelo que eu constatei não é possível recriar esse comando no terminal do Windows o cmd):
 
 touch .gitignore
 
